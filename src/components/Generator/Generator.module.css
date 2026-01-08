@@ -1,0 +1,417 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8) 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================================
+   HEADER
+   =========================================== */
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2);
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+/* ===========================================
+   CONTENT AREA
+   =========================================== */
+
+.content {
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.stepContainer {
+  padding: var(--space-8);
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===========================================
+   SAMPLE PROJECTS
+   =========================================== */
+
+.sampleSection {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.sampleHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-3);
+}
+
+.sampleGrid {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.sampleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-3) var(--space-4);
+  background: hsl(var(--muted) / 0.4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-align: left;
+  font-family: var(--font-sans);
+}
+
+.sampleCard:hover {
+  background: hsl(var(--primary) / 0.08);
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.sampleName {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.sampleType {
+  font-size: 0.75rem;
+  color: hsl(var(--primary));
+  font-weight: 500;
+}
+
+/* ===========================================
+   TIME SELECTION
+   =========================================== */
+
+.timeSection {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.timeHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: var(--space-3);
+}
+
+.timeOptions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.timeOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-5);
+  background: hsl(var(--surface));
+  border: 2px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition);
+  font-family: var(--font-sans);
+  min-width: 70px;
+}
+
+.timeOption:hover {
+  border-color: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.04);
+}
+
+.timeOptionActive {
+  border-color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.08);
+}
+
+.timeValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  line-height: 1;
+}
+
+.timeOptionActive .timeValue {
+  color: hsl(var(--primary));
+}
+
+.timeUnit {
+  font-size: 0.7rem;
+  color: hsl(var(--muted-foreground));
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ===========================================
+   FORM LAYOUT
+   =========================================== */
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-10);
+}
+
+.formMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.catalogSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.catalogGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: var(--space-2);
+}
+
+/* ===========================================
+   FORM ELEMENTS
+   =========================================== */
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.input,
+.textarea {
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all var(--transition);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  background: hsl(var(--surface));
+  box-shadow: var(--shadow-pop);
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* ===========================================
+   RECIPE CARDS
+   =========================================== */
+
+.optionCard {
+  cursor: pointer;
+  text-align: left;
+  padding: var(--space-4);
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all var(--transition);
+  position: relative;
+}
+
+/* Color-coded left borders by workshop type */
+.optionCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: hsl(var(--border));
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  transition: all var(--transition);
+}
+
+.optionCard[data-type="Problem Framing"]::before {
+  background: hsl(var(--accent-coral));
+}
+
+.optionCard[data-type="Ideation"]::before {
+  background: hsl(var(--accent-yellow));
+}
+
+.optionCard[data-type="Team Collaboration"]::before {
+  background: hsl(var(--accent-sky));
+}
+
+.optionCard[data-type="Retrospective"]::before {
+  background: hsl(var(--accent-lavender));
+}
+
+.optionCard:hover {
+  border-color: hsl(var(--muted-foreground) / 0.2);
+  background: hsl(var(--muted) / 0.3);
+}
+
+.optionCardSelected {
+  border-color: hsl(var(--primary));
+  background: hsl(var(--primary) / 0.04);
+  box-shadow: var(--shadow-sm);
+}
+
+.optionCardSelected::before {
+  width: 4px;
+}
+
+.optionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: hsl(var(--foreground));
+}
+
+.optionHeader h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.optionCardSelected .optionHeader {
+  color: hsl(var(--primary-dark));
+}
+
+.optionDesc {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.4;
+  padding-left: calc(16px + var(--space-2));
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+
+.footer {
+  margin-top: var(--space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-6);
+  border-top: 1px solid hsl(var(--border));
+}
+
+/* ===========================================
+   PROGRESS INDICATOR
+   =========================================== */
+
+.progress {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: hsl(var(--border));
+  transition: all 0.3s var(--ease-out);
+}
+
+.dotActive {
+  background: hsl(var(--primary));
+  width: 24px;
+  border-radius: var(--radius-full);
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+
+@media (max-width: 900px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalogGrid {
+    max-height: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .optionCard {
+    flex: 1 1 calc(50% - var(--space-2));
+    min-width: 180px;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .optionCard {
+    flex: 1 1 100%;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .stepContainer {
+    padding: var(--space-6);
+  }
+}

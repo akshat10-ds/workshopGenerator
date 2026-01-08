@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.leverRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.leverRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.9rem;
+  color: hsl(var(--foreground));
+}
+
+.icon {
+  color: hsl(var(--muted-foreground));
+  background: hsl(var(--muted));
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.levelsGrid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  background: hsl(var(--muted));
+  padding: 3px;
+  border-radius: var(--radius-md);
+  gap: 3px;
+}
+
+.levelButton {
+  border: none;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: calc(var(--radius-md) - 2px);
+  cursor: pointer;
+  transition: all var(--transition);
+  color: hsl(var(--muted-foreground));
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.levelButton:hover {
+  background: hsl(var(--surface) / 0.6);
+  color: hsl(var(--foreground));
+}
+
+.activeLevel {
+  background: hsl(var(--surface));
+  color: hsl(var(--foreground));
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+.activeLevel:hover {
+  background: hsl(var(--surface));
+  color: hsl(var(--foreground));
+}
+
+.levelLabel {
+  white-space: nowrap;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+  line-height: 1.4;
+}
